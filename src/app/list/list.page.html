@@ -4,11 +4,21 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Liste
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+<ion-content>
+<ion-card *ngFor="let beer of beers">
+  <ion-card-header>
+    <ion-card-subtitle>{{ beer.name }}</ion-card-subtitle>
+    <ion-card-title>{{ beer.degree }}°</ion-card-title>
+  </ion-card-header>
+</ion-card>
+</ion-content>
+
+<!--
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let item of items">
@@ -19,9 +29,36 @@
       </div>
     </ion-item>
   </ion-list>
-  <!--
+
     <div *ngIf="selectedItem" padding>
       You navigated here from <b>{{selectedItem.title }}</b>
     </div>
-  -->
-</ion-content>
+
+</ion-content> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <td>Marque</td>
+            <td>Degrée</td>
+            <td>Name</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let beer of beers'>
+            <td>{{ beer.brand }}</td>
+            <td>{{ beer.degree }}</td>
+            <td><img [src]="beer.image"></td>
+            <td>{{ beer.name }}</td>
+            <td> <button [routerLink]="['/detail', beer.id]" class="btn btn-primary">Editer</button></td>
+            <td> <button (click)="delBeer()" class="btn btn-danger">Supprimer</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> -->
